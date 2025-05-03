@@ -1,6 +1,6 @@
 // Handle distress signal button click
 function sendDistressSignal() {
-    const whatsappNumber = "0818179230"; // Replace with actual number
+    const whatsappNumber = "000000000"; // Replace with actual number
     const message = "Emergency! Please assist.";
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");

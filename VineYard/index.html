@@ -13,13 +13,13 @@
     <main>
         <button id="distressButton" onclick="sendDistressSignal()">Send Distress Signal</button>
         <div id="chatbot">
-            <h2>AI Chatbot</h2>
+            <h2>AI Assistance</h2>
             <div id="chatWindow"></div>
             <input type="text" id="userInput" placeholder="Type your message...">
             <button id="sendButton">Send</button>
         </div>
         <div id="map">
-            <h2>Your Location</h2>
+            <h2>Your Live Location</h2>
             <div id="mapContainer"></div>
         </div>
     </main>
@@ -28,7 +28,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- For popup notifications -->
     <script>
         function sendDistressSignal() {
-            const whatsappNumber = "0818179230"; // Replace with actual number
+            const whatsappNumber = "000000000"; // Replace with actual number or help line 
             const message = "Emergency! Please assist.";
             const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, "_blank");

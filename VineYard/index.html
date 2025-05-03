@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VineYard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Emergency Assistance</h1>
+    </header>
+    <main>
+        <button id="distressButton" onclick="sendDistressSignal()">Send Distress Signal</button>
+        <div id="chatbot">
+            <h2>AI Chatbot</h2>
+            <div id="chatWindow"></div>
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button id="sendButton">Send</button>
+        </div>
+        <div id="map">
+            <h2>Your Location</h2>
+            <div id="mapContainer"></div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- For popup notifications -->
+    <script>
+        function sendDistressSignal() {
+            const whatsappNumber = "0818179230"; // Replace with actual number
+            const message = "Emergency! Please assist.";
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, "_blank");
+            Swal.fire({
+                title: 'Distress Signal Sent!',
+                text: 'Your emergency message has been sent via WhatsApp.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        }
+    </script>
+</body>
+</html>
